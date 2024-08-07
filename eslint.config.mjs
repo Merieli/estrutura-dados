@@ -52,13 +52,6 @@ export default [
       ],
       "@typescript-eslint/array-type": "error",
       "@typescript-eslint/no-unused-vars": "warn",
-      "no-restricted-syntax": [
-        "error",
-        {
-          selector: "ExportDefaultDeclaration",
-          message: "Prefer named exports",
-        },
-      ],
       "sort-imports": [
         "error",
         {
@@ -67,6 +60,34 @@ export default [
           ignoreMemberSort: false,
           memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
           allowSeparatedGroups: true,
+        },
+      ],
+      "no-restricted-syntax": [
+        "error",
+        {
+          selector: "ExportDefaultDeclaration",
+          message: "Prefer named exports",
+        },
+        // Testar as regras abaixo:
+        {
+          selector:
+            "ImportDeclaration[source.value=/^[^./]/] ~ ImportDeclaration[source.value=/^[./]/]",
+          message: "Builtin imports must come before external imports",
+        },
+        {
+          selector:
+            "ImportDeclaration[source.value=/^[./]/] ~ ImportDeclaration[source.value=/^../]",
+          message: "External imports must come before parent imports",
+        },
+        {
+          selector:
+            "ImportDeclaration[source.value=/^../] ~ ImportDeclaration[source.value=./]",
+          message: "Parent imports must come before sibling imports",
+        },
+        {
+          selector:
+            "ImportDeclaration[source.value=./] ~ ImportDeclaration[source.value=/^./]",
+          message: "Sibling imports must come before index imports",
         },
       ],
     },
