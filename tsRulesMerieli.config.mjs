@@ -47,11 +47,33 @@ export default [
             '@typescript-eslint/array-type': 'error',
             '@typescript-eslint/no-unused-vars': 'warn',
             '@typescript-eslint/no-explicit-any': 'warn',
+            '@typescript-eslint/consistent-type-imports': [
+                'error',
+                {
+                    prefer: 'type-imports',
+                    fixStyle: 'separate-type-imports',
+                },
+            ],
+            'import/order': [
+                'error',
+                {
+                    alphabetize: {
+                        caseInsensitive: true,
+                        order: 'asc',
+                    },
+                    groups: [
+                        ['builtin', 'external', 'object', 'type'],
+                        ['internal', 'parent', 'sibling', 'index'],
+                    ],
+                    'newlines-between': 'always',
+                },
+            ],
             'sort-imports': [
                 'error',
                 {
-                    ignoreCase: false,
-                    ignoreDeclarationSort: false,
+                    allowSeparatedGroups: true,
+                    ignoreCase: true,
+                    ignoreDeclarationSort: true,
                     ignoreMemberSort: false,
                     memberSyntaxSortOrder: [
                         'none',
@@ -59,7 +81,6 @@ export default [
                         'multiple',
                         'single',
                     ],
-                    allowSeparatedGroups: true,
                 },
             ],
             'no-restricted-syntax': [
