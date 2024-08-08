@@ -54,20 +54,20 @@ export default [
                     fixStyle: 'separate-type-imports',
                 },
             ],
-            'import/order': [
-                'error',
-                {
-                    alphabetize: {
-                        caseInsensitive: true,
-                        order: 'asc',
-                    },
-                    groups: [
-                        ['builtin', 'external', 'object', 'type'],
-                        ['internal', 'parent', 'sibling', 'index'],
-                    ],
-                    'newlines-between': 'always',
-                },
-            ],
+            // 'import/order': [
+            //     'error',
+            //     {
+            //         alphabetize: {
+            //             caseInsensitive: true,
+            //             order: 'asc',
+            //         },
+            //         groups: [
+            //             ['builtin', 'external', 'object', 'type'],
+            //             ['internal', 'parent', 'sibling', 'index'],
+            //         ],
+            //         'newlines-between': 'always',
+            //     },
+            // ],
             'sort-imports': [
                 'error',
                 {
