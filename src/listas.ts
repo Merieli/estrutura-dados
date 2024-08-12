@@ -43,10 +43,10 @@ export const listas = () => {
 
     /** Representa cada elemento da lista */
     class Node {
-        data: any;
+        data: number | string;
         next: Node | null;
 
-        constructor(data: any) {
+        constructor(data: number | string) {
             this.data = data;
             this.next = null;
         }
@@ -62,7 +62,7 @@ export const listas = () => {
             return this.head === null;
         }
 
-        push(item: any) {
+        push(item: number | string) {
             const node = new Node(item);
             node.next = this.head;
             this.head = node;
@@ -93,7 +93,7 @@ export const listas = () => {
             return false;
         }
 
-        remove(item: any) {
+        remove(item: string | number) {
             if (this.head === null) {
                 return;
             }
@@ -152,7 +152,7 @@ export const listas = () => {
             return this.head === null;
         }
 
-        add(item: any) {
+        add(item: number | string) {
             let current: any = this.head;
             let previous = null;
             let stop = false;
@@ -188,7 +188,7 @@ export const listas = () => {
             return count;
         }
 
-        search(item: any) {
+        search(item: number | string) {
             let current = this.head;
             let found = false;
             let stop = false;
