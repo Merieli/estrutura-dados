@@ -44,6 +44,7 @@ export default [
                 },
             ],
             'no-useless-concat': 'error',
+            'no-useless-rename': 'error',
             '@typescript-eslint/array-type': 'error',
             '@typescript-eslint/no-unused-vars': 'warn',
             '@typescript-eslint/no-explicit-any': 'warn',
