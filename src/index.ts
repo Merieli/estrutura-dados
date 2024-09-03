@@ -89,10 +89,38 @@ class QueueOfPlanes {
     }
 }
 
-const plane1 = new Plane('Boeing 737', 'Gol', 'GRU', 'CGH', '150', 1234);
-const plane2 = new Plane('Airbus A320', 'Azul', 'CGH', 'SDU', '100', 5678);
-const plane3 = new Plane('Boeing 777', 'Latam', 'GRU', 'MIA', '300', 9876);
-const plane4 = new Plane('Airbus A380', 'Emirates', 'DXB', 'GRU', '500', 5432);
+const plane1 = new Plane(
+    'Boeing 737',
+    'Gol',
+    'Brasília - Brasil',
+    'Canadá - Toronto',
+    '200',
+    1234,
+);
+const plane2 = new Plane(
+    'Airbus A320',
+    'Azul',
+    'São Paulo - Brasil',
+    'Rio de Janeiro - Brasil',
+    '100',
+    5678,
+);
+const plane3 = new Plane(
+    'Boeing 777',
+    'Latam',
+    'São Paulo - Brasil',
+    'Miami - USA',
+    '300',
+    9876,
+);
+const plane4 = new Plane(
+    'Airbus A380',
+    'Emirates',
+    'Dubai - UAE',
+    'São Paulo - Brasil',
+    '500',
+    5432,
+);
 
 const queueOfPlanes = new QueueOfPlanes();
 queueOfPlanes.addPlane(plane1);
