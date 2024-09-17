@@ -1,10 +1,14 @@
+import { deque } from './deque';
 import { fila } from './fila';
 import { listas } from './listas';
+import { matriz } from './matriz';
 import { pilha } from './pilha';
 
 listas();
 pilha();
 fila();
+deque();
+matriz();
 
 class Plane {
     constructor(
@@ -127,20 +131,40 @@ queueOfPlanes.addPlane(plane1);
 queueOfPlanes.addPlane(plane2);
 queueOfPlanes.addPlane(plane3);
 queueOfPlanes.addPlane(plane4);
-console.log('Total de aviões:', queueOfPlanes.totalPlanes);
+// console.log('Total de aviões:', queueOfPlanes.totalPlanes);
 
-console.log('\nDecolando o primeiro avião da fila...', queueOfPlanes.takeOff());
+// console.log('\nDecolando o primeiro avião da fila...', queueOfPlanes.takeOff());
 
-console.log(
-    '\nTotal de aviões aguardando na fila de decolagem:',
-    queueOfPlanes.totalPlanes,
-);
+// console.log(
+//     '\nTotal de aviões aguardando na fila de decolagem:',
+//     queueOfPlanes.totalPlanes,
+// );
 
-console.log(
-    '\nTodos os aviões na fila de decolagem:',
-    queueOfPlanes.listPlanes(),
-);
+// console.log(
+//     '\nTodos os aviões na fila de decolagem:',
+//     queueOfPlanes.listPlanes(),
+// );
 
-console.log('\nPróximo avião a decolar: \n', queueOfPlanes.nextPlaneInfo());
+// console.log('\nPróximo avião a decolar: \n', queueOfPlanes.nextPlaneInfo());
 
-console.log('\nPosição do voo 9876:', queueOfPlanes.planePosition(9876));
+// console.log('\nPosição do voo 9876:', queueOfPlanes.planePosition(9876));
+
+console.log('\n\n RECURSIVIDADE');
+
+// Recursividade para somar todos os itens de uma lista
+
+const list = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+
+const sumList = (list: number[]): number => {
+    if (list.length === 0) {
+        return 0;
+    }
+
+    if (list.length === 1) {
+        return list[0];
+    }
+
+    return list[0] + sumList(list.slice(1));
+};
+
+console.log('Soma da lista:', sumList(list));
